@@ -199,6 +199,7 @@ h2{font-family:Orbitron;font-weight:800;font-size:clamp(28px,4vw,48px);line-heig
 .tag{position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:8px;background:var(--red)}
 .tag.new{background:var(--cyan);color:#001}
 .tag.hot{background:var(--gold);color:#140}
+.tag.value{background:var(--green);color:#012}
 .prod .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .prod .meta{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
 .prod h4{font-size:16px;font-weight:700;line-height:1.3}
@@ -372,7 +373,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 30px;background:var(--bg2
 </div></div>
 <div id="glow"></div>
 
-<div class="ribbon">⚡ <b>Concept redesign</b> made for Daddu Charger Gaming Store · prices & products are sample data</div>
+<div class="ribbon">⚡ <b>Concept redesign</b> made for Daddu Charger Gaming Store · PC builds & prices from the current store, accessories are sample data</div>
 
 <header id="hdr"><div class="wrap nav">
   <a href="#top" class="logo">
@@ -553,6 +554,8 @@ footer{border-top:1px solid var(--line);padding:70px 0 30px;background:var(--bg2
       <div class="info reveal">
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
           <div><b>Daddu Charger Gaming Store</b><span>Royal Plaza Basement, LG 04, 6th Road, Satellite Town, Rawalpindi</span></div></div>
+        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <div><b>Call / WhatsApp</b><span><a href="tel:+923115226682">+92 311 5226682</a> · <a href="mailto:dadduchargergs@gmail.com">dadduchargergs@gmail.com</a></span></div></div>
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           <div><b>Store hours</b><span>Mon to Sat · 12:00 PM to 10:00 PM (confirm with store)</span></div></div>
         <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
@@ -572,7 +575,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 30px;background:var(--bg2
     <div class="foot">
       <div>
         <a href="#top" class="logo"><svg viewBox="0 0 64 64"><path d="M36 4 12 36h18l-4 24 26-34H34z" fill="#ff2e63"/></svg><span>DADDU<span class="grad-text">CHARGER</span><small>GAMING STORE</small></span></a>
-        <p>Custom gaming PCs and premium gear from Rawalpindi, delivered across Pakistan.</p>
+        <p>Custom gaming PCs and premium gear from Rawalpindi, delivered across Pakistan.<br><a href="tel:+923115226682">+92 311 5226682</a></p>
         <div class="socials">
           <a href="https://www.facebook.com/DadduCharg3r/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5Z"/></svg></a>
           <a href="https://www.tiktok.com/@dadducharg3r" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.4 1.9 4 4 4.3v3.4a7.6 7.6 0 0 1-4-1.2v6.3A5.9 5.9 0 1 1 10 9.9v3.5a2.5 2.5 0 1 0 2.5 2.4V3Z"/></svg></a>
@@ -602,7 +605,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 30px;background:var(--bg2
 
 <script>
 /* ======== CONFIG: put the store's WhatsApp number here (format 923001234567) ======== */
-const WHATSAPP = "";
+const WHATSAPP = "923115226682";
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const pkr = n => "Rs " + n.toLocaleString("en-PK");
@@ -653,14 +656,15 @@ function gearSVG(kind, c = "#08f7fe") {
 
 /* ---------- data (sample) ---------- */
 const PRODUCTS = [
-  { id: "b1", cat: "pcs", name: "Daddu Viper · RTX 5060 Ti Build", meta: "Gaming PC", specs: ["Ryzen 5 7600", "RTX 5060 Ti 16GB", "32GB DDR5"], price: 389000, old: 425000, tag: "HOT", art: () => pcSVG("#ff2e63", "#ffc857"), c: "#ff2e63" },
-  { id: "b2", cat: "pcs", name: "Daddu Phantom · RTX 5070 Build", meta: "Gaming PC", specs: ["Ryzen 7 7800X3D", "RTX 5070 12GB", "32GB DDR5"], price: 565000, tag: "NEW", art: () => pcSVG("#08f7fe", "#9d4edd"), c: "#08f7fe" },
-  { id: "b3", cat: "pcs", name: "Daddu Titan · RTX 5080 Build", meta: "Gaming PC", specs: ["Ryzen 9 9900X", "RTX 5080 16GB", "64GB DDR5"], price: 985000, art: () => pcSVG("#9d4edd", "#ff2e63"), c: "#9d4edd" },
+  { id: "b1", cat: "pcs", name: "Ultimate 9800X3D · RTX 5070 Ti Build", meta: "Gaming PC · 4K / 2K", specs: ["Ryzen 7 9800X3D", "ASUS TUF RTX 5070 Ti"], price: 895000, tag: "HOT", art: () => pcSVG("#2bff88", "#08f7fe"), c: "#2bff88" },
+  { id: "b2", cat: "pcs", name: "Performance Beast · RTX 3060 Ti Build", meta: "Gaming PC · 1080p / 2K", specs: ["Core i5-12400F", "RTX 3060 Ti"], price: 245000, tag: "VALUE", art: () => pcSVG("#ffc857", "#2bff88"), c: "#ffc857" },
+  { id: "b3", cat: "pcs", name: "Powerhouse 9950X · RTX 5070 Creator Build", meta: "Creator & Gaming · 2K / 4K", specs: ["Ryzen 9 9950X", "ZOTAC RTX 5070 12GB"], price: 1060000, tag: "NEW", art: () => pcSVG("#08f7fe", "#9d4edd"), c: "#08f7fe" },
+  { id: "b4", cat: "pcs", name: "Premium White · ROG RTX 3080 Build", meta: "Gaming PC · 2K / 4K", specs: ["Ryzen 9 7900X", "ASUS ROG White RTX 3080"], price: 555000, art: () => pcSVG("#ff2e63", "#ffffff"), c: "#ff2e63" },
   { id: "g1", cat: "gear", name: "27\" QHD 180Hz IPS Gaming Monitor", meta: "Monitor", specs: ["2560×1440", "1ms", "G-Sync"], price: 74500, old: 82000, tag: "-9%", art: () => gearSVG("monitor", "#08f7fe"), c: "#08f7fe" },
   { id: "g2", cat: "gear", name: "Hot-swap Mechanical Keyboard 75%", meta: "Keyboard", specs: ["Gasket mount", "RGB", "Wireless"], price: 18900, tag: "NEW", art: () => gearSVG("keyboard", "#ff2e63"), c: "#ff2e63" },
   { id: "g3", cat: "gear", name: "Ultralight Wireless Esports Mouse", meta: "Mouse", specs: ["58g", "26K DPI", "4K Hz"], price: 14500, art: () => gearSVG("mouse", "#2bff88"), c: "#2bff88" },
   { id: "g4", cat: "gear", name: "7.1 Surround Gaming Headset", meta: "Headset", specs: ["50mm drivers", "Detachable mic"], price: 12900, old: 15500, tag: "-17%", art: () => gearSVG("headset", "#9d4edd"), c: "#9d4edd" },
-  { id: "g5", cat: "gear", name: "Ergonomic Gaming Chair Pro", meta: "Chair", specs: ["4D armrests", "Lumbar support"], price: 52000, art: () => gearSVG("chair", "#ffc857"), c: "#ffc857" },
+  { id: "g5", cat: "gear", hideAll: true, name: "Ergonomic Gaming Chair Pro", meta: "Chair", specs: ["4D armrests", "Lumbar support"], price: 52000, art: () => gearSVG("chair", "#ffc857"), c: "#ffc857" },
   { id: "p1", cat: "parts", name: "GeForce RTX 5070 Ti 16GB", meta: "Graphics Card", specs: ["DLSS 4", "Triple fan"], price: 268000, tag: "HOT", art: () => gearSVG("gpu", "#2bff88"), c: "#2bff88" },
   { id: "p2", cat: "parts", name: "Panoramic Glass ARGB Case", meta: "Case", specs: ["Dual chamber", "7 ARGB fans"], price: 24500, old: 39000, tag: "-37%", art: () => gearSVG("case", "#ff2e63"), c: "#ff2e63" },
   { id: "p3", cat: "parts", name: "PS5 Slim + Extra DualSense", meta: "Console", specs: ["1TB", "Bundle"], price: 158000, art: () => gearSVG("console", "#08f7fe"), c: "#08f7fe" },
@@ -717,9 +721,9 @@ const check = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const TABS = [["all", "All"], ["pcs", "Gaming PCs"], ["gear", "Gear"], ["parts", "Parts & Consoles"]];
 $("#tabs").innerHTML = TABS.map(([k, l], i) => `<button class="tab${i ? "" : " on"}" data-k="${k}">${l}</button>`).join("");
 function renderProducts(k = "all") {
-  const list = PRODUCTS.filter(p => k === "all" || p.cat === k).slice(0, 8);
+  const list = PRODUCTS.filter(p => k === "all" ? !p.hideAll : p.cat === k).slice(0, 8);
   $("#grid-p").innerHTML = list.map(p => `<article class="prod reveal" data-id="${p.id}" style="--c:${p.c}">
-    <div class="pic">${p.tag ? `<span class="tag ${p.tag === "NEW" ? "new" : p.tag === "HOT" ? "hot" : ""}">${p.tag}</span>` : ""}${p.art()}</div>
+    <div class="pic">${p.tag ? `<span class="tag ${p.tag === "NEW" ? "new" : p.tag === "HOT" ? "hot" : p.tag === "VALUE" ? "value" : ""}">${p.tag}</span>` : ""}${p.art()}</div>
     <div class="body"><span class="meta">${p.meta}</span><h4>${p.name}</h4>
       <div class="specs">${p.specs.map(s => `<span>${s}</span>`).join("")}</div>
       <div class="price-row"><div class="price">${p.old ? `<s>${pkr(p.old)}</s>` : ""}<b>${pkr(p.price)}</b></div>
